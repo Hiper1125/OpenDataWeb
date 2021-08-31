@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+        <div class="text-center">
+            <h1 class="display-4">OpenDataWeb</h1>
+
+            <center>
+                <form method="get" action="/Search">
+                    <h1 class="title">Ricerca Fermata</h1>
+
+                    <div class="search">
+                        <div id="user-input">
+                            <h4>Valore</h4>
+                            <input class="input" type="text" id="parameter" name="parameter" />
+                        </div>
+
+                        <div>
+                            <h4>Criterio</h4>
+                            <select class="input" name="method" onchange="Check(this.value)">
+                                <option value="Default">Tutte le fermate</option>
+                                <option value="Nome">Fermate con un nome</option>
+                                <option value="Regione">Fermate in una regione</option>
+                                <option value="Provincia">Fermate in una provincia</option>
+                                <option value="Lettera">Fermate contenenti una lettera</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <input class="sumbit" type="submit" value="Cerca">
+                    </div>
+
+                </form>
+            </center>
+        </div>

@@ -1,0 +1,37 @@
+﻿@page
+@model OpenDataWeb.Pages.SearchModel
+@{
+    Layout = "_MapLayout";
+    ViewData["Title"] = "Ricerca";
+}
+
+    <div>
+        <h1>Risultati della ricerca</h1>
+
+        <div id="map" class="map">
+            <div id="popup" class="ol-popup">
+                <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+                <div id="popup-content"></div>
+            </div>
+        </div>
+
+        <div class="list">
+            <table border="1">
+                <tr>
+                    <th class="text-shift">Id</th>
+                    <th class="text-shift">Nome</th>
+                    <th class="text-shift">Comune</th>
+                    <th class="text-shift">Controlli</th>
+                </tr>
+                @foreach (var Fermata in Model.Fermate)
+                {
+                    <tr>
+                        <td class="text-shift">@Fermata.ID</td>
+                        <td class="text-shift">@Fermata.Nome</td>
+                        <td class="text-shift">@Fermata.Comune</td>
+                        <td><button class="view-pos" onclick="SetPos('@Fermata.Nome.Replace('\'', '\t')', @Fermata.Latitudine, @Fermata.Longitudine)">Visualizza</button></td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
