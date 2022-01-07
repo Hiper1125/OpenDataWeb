@@ -1,4 +1,4 @@
-# OpenDataWeb
+# Open Data Web
 > A website made with OpenStreetMap APIs and Razor Pages technology
 
 # Screenshot
